@@ -1,0 +1,10 @@
+services:
+  queryguard:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      QUERYGUARD_LOG_LEVEL: INFO
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
