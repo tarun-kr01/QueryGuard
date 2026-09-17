@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "queryguard"
+version = "0.1.0"
+description = "Cost-aware, safety-first natural language to SQL guardrail service"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.100",
+  "pydantic>=2.0",
+  "uvicorn[standard]>=0.22",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "httpx>=0.24"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
